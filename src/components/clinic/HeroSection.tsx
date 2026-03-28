@@ -8,6 +8,22 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ whatsappUrl, onBookClick }: HeroSectionProps) => {
+  const [count, setCount] = useState(0);
+  const target = 127;
+  const ref = useRef<number>();
+
+  useEffect(() => {
+    const duration = 2000;
+    const start = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) ref.current = requestAnimationFrame(step);
+    };
+    ref.current = requestAnimationFrame(step);
+    return () => { if (ref.current) cancelAnimationFrame(ref.current); };
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
