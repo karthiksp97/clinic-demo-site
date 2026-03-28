@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const ClinicHeader = ({ whatsappUrl }: { whatsappUrl: string }) => {
   return (
@@ -14,11 +14,11 @@ const ClinicHeader = ({ whatsappUrl }: { whatsappUrl: string }) => {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-clinic-blue-dark transition-colors"
+          className="flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-medium hover:brightness-110 transition-all"
         >
-          <Phone className="w-4 h-4" />
-          <span className="hidden sm:inline">Book Appointment</span>
-          <span className="sm:hidden">Book</span>
+          <MessageCircle className="w-4 h-4" />
+          <span className="hidden sm:inline">Book Instantly on WhatsApp</span>
+          <span className="sm:hidden">Book Now</span>
         </a>
       </div>
     </header>

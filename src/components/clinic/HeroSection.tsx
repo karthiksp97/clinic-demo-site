@@ -17,10 +17,10 @@ const HeroSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
       <div className="relative section-padding container-clinic min-h-[520px] md:min-h-[600px] flex flex-col justify-center">
         <div className="max-w-xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-4">
-            Welcome to <br />CityCare Clinic
+            Get More Patient Bookings Without Phone Calls
           </h1>
           <p className="text-lg md:text-xl text-primary-foreground/85 mb-8 leading-relaxed">
-            Trusted care. Easy appointments. Now available online.
+            Patients can book instantly via WhatsApp — no missed enquiries
           </p>
           <a
             href={whatsappUrl}
@@ -29,10 +29,10 @@ const HeroSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded-lg text-base font-semibold hover:brightness-110 transition-all shadow-lg"
           >
             <MessageCircle className="w-5 h-5" />
-            Book Appointment on WhatsApp
+            Book Instantly on WhatsApp
           </a>
           <p className="text-primary-foreground/60 text-sm mt-3">
-            Quick booking in under 10 seconds
+            Most patients prefer WhatsApp over calling
           </p>
         </div>
       </div>
