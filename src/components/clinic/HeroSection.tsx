@@ -52,9 +52,10 @@ const HeroSection = ({ whatsappUrl, onBookClick }: HeroSectionProps) => {
             <MessageCircle className="w-5 h-5" />
             Book Instantly on WhatsApp
           </a>
-          <p className="text-primary-foreground/60 text-sm mt-3">
-            Most patients prefer WhatsApp over calling
-          </p>
+          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 border border-primary-foreground/20">
+            <span className="text-2xl font-bold text-accent">{count}+</span>
+            <span className="text-primary-foreground/80 text-sm">patients booked this month</span>
+          </div>
         </div>
       </div>
     </section>
