@@ -1,6 +1,11 @@
 import { MessageCircle } from "lucide-react";
 
-const ClinicHeader = ({ whatsappUrl }: { whatsappUrl: string }) => {
+interface ClinicHeaderProps {
+  whatsappUrl: string;
+  onBookClick: (e: React.MouseEvent) => void;
+}
+
+const ClinicHeader = ({ whatsappUrl, onBookClick }: ClinicHeaderProps) => {
   return (
     <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
       <div className="container-clinic flex items-center justify-between h-16 px-5 lg:px-0">
@@ -12,9 +17,8 @@ const ClinicHeader = ({ whatsappUrl }: { whatsappUrl: string }) => {
         </div>
         <a
           href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-medium hover:brightness-110 transition-all"
+          onClick={onBookClick}
+          className="flex items-center gap-2 bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-medium hover:brightness-110 transition-all cursor-pointer"
         >
           <MessageCircle className="w-4 h-4" />
           <span className="hidden sm:inline">Book Instantly on WhatsApp</span>
