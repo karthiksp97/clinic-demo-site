@@ -17,8 +17,11 @@ const FinalCtaSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
           className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:brightness-110 transition-all shadow-lg"
         >
           <MessageCircle className="w-5 h-5" />
-          Book Now
+          Book Instantly on WhatsApp
         </a>
+        <p className="text-primary-foreground/60 text-sm mt-3">
+          Most patients prefer WhatsApp over calling
+        </p>
       </div>
     </section>
   );

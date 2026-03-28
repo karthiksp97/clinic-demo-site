@@ -1,4 +1,5 @@
 import HeroSection from "@/components/clinic/HeroSection";
+import KpiSection from "@/components/clinic/KpiSection";
 import AboutSection from "@/components/clinic/AboutSection";
 import ServicesSection from "@/components/clinic/ServicesSection";
 import DoctorSection from "@/components/clinic/DoctorSection";
@@ -19,6 +20,7 @@ const Index = () => {
       <ClinicHeader whatsappUrl={WHATSAPP_URL} />
       <main>
         <HeroSection whatsappUrl={WHATSAPP_URL} />
+        <KpiSection />
         <AboutSection />
         <ServicesSection />
         <DoctorSection />
