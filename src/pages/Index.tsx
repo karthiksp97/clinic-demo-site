@@ -1,3 +1,4 @@
+import { useState } from "react";
 import HeroSection from "@/components/clinic/HeroSection";
 import KpiSection from "@/components/clinic/KpiSection";
 import AboutSection from "@/components/clinic/AboutSection";
@@ -12,15 +13,23 @@ import FloatingWhatsApp from "@/components/clinic/FloatingWhatsApp";
 import ClinicHeader from "@/components/clinic/ClinicHeader";
 import ClinicFooter from "@/components/clinic/ClinicFooter";
 import ScrollReveal from "@/components/clinic/ScrollReveal";
+import WhatsAppMock from "@/components/clinic/WhatsAppMock";
 
 const WHATSAPP_URL = "https://wa.me/919999999999?text=Hi%20I%20want%20to%20book%20an%20appointment";
 
 const Index = () => {
+  const [mockOpen, setMockOpen] = useState(false);
+
+  const openMock = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMockOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      <ClinicHeader whatsappUrl={WHATSAPP_URL} />
+      <ClinicHeader whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
       <main>
-        <HeroSection whatsappUrl={WHATSAPP_URL} />
+        <HeroSection whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
         <ScrollReveal>
           <KpiSection />
         </ScrollReveal>
@@ -46,11 +55,12 @@ const Index = () => {
           <ContactSection />
         </ScrollReveal>
         <ScrollReveal>
-          <FinalCtaSection whatsappUrl={WHATSAPP_URL} />
+          <FinalCtaSection whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
         </ScrollReveal>
       </main>
       <ClinicFooter />
-      <FloatingWhatsApp whatsappUrl={WHATSAPP_URL} />
+      <FloatingWhatsApp whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
+      <WhatsAppMock open={mockOpen} onClose={() => setMockOpen(false)} />
     </div>
   );
 };

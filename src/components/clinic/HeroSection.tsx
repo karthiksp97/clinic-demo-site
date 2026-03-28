@@ -1,7 +1,12 @@
 import heroImage from "@/assets/hero-clinic.jpg";
 import { MessageCircle } from "lucide-react";
 
-const HeroSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
+interface HeroSectionProps {
+  whatsappUrl: string;
+  onBookClick: (e: React.MouseEvent) => void;
+}
+
+const HeroSection = ({ whatsappUrl, onBookClick }: HeroSectionProps) => {
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
@@ -24,9 +29,8 @@ const HeroSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
           </p>
           <a
             href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded-lg text-base font-semibold hover:brightness-110 transition-all shadow-lg"
+            onClick={onBookClick}
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded-lg text-base font-semibold hover:brightness-110 transition-all shadow-lg cursor-pointer"
           >
             <MessageCircle className="w-5 h-5" />
             Book Instantly on WhatsApp

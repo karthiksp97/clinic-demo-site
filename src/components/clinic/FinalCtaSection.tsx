@@ -1,6 +1,11 @@
 import { MessageCircle } from "lucide-react";
 
-const FinalCtaSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
+interface FinalCtaSectionProps {
+  whatsappUrl: string;
+  onBookClick: (e: React.MouseEvent) => void;
+}
+
+const FinalCtaSection = ({ whatsappUrl, onBookClick }: FinalCtaSectionProps) => {
   return (
     <section className="section-padding bg-primary">
       <div className="container-clinic text-center">
@@ -12,9 +17,8 @@ const FinalCtaSection = ({ whatsappUrl }: { whatsappUrl: string }) => {
         </p>
         <a
           href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:brightness-110 transition-all shadow-lg"
+          onClick={onBookClick}
+          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:brightness-110 transition-all shadow-lg cursor-pointer"
         >
           <MessageCircle className="w-5 h-5" />
           Book Instantly on WhatsApp
