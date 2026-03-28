@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-clinic.jpg";
 import { MessageCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 interface HeroSectionProps {
   whatsappUrl: string;
