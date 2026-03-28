@@ -11,6 +11,7 @@ import FinalCtaSection from "@/components/clinic/FinalCtaSection";
 import FloatingWhatsApp from "@/components/clinic/FloatingWhatsApp";
 import ClinicHeader from "@/components/clinic/ClinicHeader";
 import ClinicFooter from "@/components/clinic/ClinicFooter";
+import ScrollReveal from "@/components/clinic/ScrollReveal";
 
 const WHATSAPP_URL = "https://wa.me/919999999999?text=Hi%20I%20want%20to%20book%20an%20appointment";
 
@@ -20,15 +21,33 @@ const Index = () => {
       <ClinicHeader whatsappUrl={WHATSAPP_URL} />
       <main>
         <HeroSection whatsappUrl={WHATSAPP_URL} />
-        <KpiSection />
-        <AboutSection />
-        <ServicesSection />
-        <DoctorSection />
-        <WhyChooseUsSection />
-        <TestimonialsSection />
-        <HowToBookSection />
-        <ContactSection />
-        <FinalCtaSection whatsappUrl={WHATSAPP_URL} />
+        <ScrollReveal>
+          <KpiSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <AboutSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ServicesSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <DoctorSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <WhyChooseUsSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <TestimonialsSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <HowToBookSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <FinalCtaSection whatsappUrl={WHATSAPP_URL} />
+        </ScrollReveal>
       </main>
       <ClinicFooter />
       <FloatingWhatsApp whatsappUrl={WHATSAPP_URL} />
