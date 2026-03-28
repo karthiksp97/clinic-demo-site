@@ -1,13 +1,17 @@
 import { useState } from "react";
 import HeroSection from "@/components/clinic/HeroSection";
 import KpiSection from "@/components/clinic/KpiSection";
+import BeforeAfterSection from "@/components/clinic/BeforeAfterSection";
+import GooglePreviewSection from "@/components/clinic/GooglePreviewSection";
 import AboutSection from "@/components/clinic/AboutSection";
 import ServicesSection from "@/components/clinic/ServicesSection";
 import DoctorSection from "@/components/clinic/DoctorSection";
 import WhyChooseUsSection from "@/components/clinic/WhyChooseUsSection";
 import TestimonialsSection from "@/components/clinic/TestimonialsSection";
+import PhoneMockupSection from "@/components/clinic/PhoneMockupSection";
 import HowToBookSection from "@/components/clinic/HowToBookSection";
 import ContactSection from "@/components/clinic/ContactSection";
+import CompetitorBanner from "@/components/clinic/CompetitorBanner";
 import FinalCtaSection from "@/components/clinic/FinalCtaSection";
 import FloatingWhatsApp from "@/components/clinic/FloatingWhatsApp";
 import ClinicHeader from "@/components/clinic/ClinicHeader";
@@ -30,30 +34,18 @@ const Index = () => {
       <ClinicHeader whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
       <main>
         <HeroSection whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
-        <ScrollReveal>
-          <KpiSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <AboutSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <ServicesSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <DoctorSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <WhyChooseUsSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <TestimonialsSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <HowToBookSection />
-        </ScrollReveal>
-        <ScrollReveal>
-          <ContactSection />
-        </ScrollReveal>
+        <ScrollReveal><KpiSection /></ScrollReveal>
+        <ScrollReveal><BeforeAfterSection /></ScrollReveal>
+        <ScrollReveal><GooglePreviewSection /></ScrollReveal>
+        <ScrollReveal><AboutSection /></ScrollReveal>
+        <ScrollReveal><ServicesSection /></ScrollReveal>
+        <ScrollReveal><DoctorSection /></ScrollReveal>
+        <ScrollReveal><WhyChooseUsSection /></ScrollReveal>
+        <ScrollReveal><TestimonialsSection /></ScrollReveal>
+        <ScrollReveal><PhoneMockupSection /></ScrollReveal>
+        <ScrollReveal><HowToBookSection /></ScrollReveal>
+        <ScrollReveal><ContactSection /></ScrollReveal>
+        <ScrollReveal><CompetitorBanner /></ScrollReveal>
         <ScrollReveal>
           <FinalCtaSection whatsappUrl={WHATSAPP_URL} onBookClick={openMock} />
         </ScrollReveal>

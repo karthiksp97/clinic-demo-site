@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-clinic.jpg";
 import { MessageCircle } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 interface HeroSectionProps {
   whatsappUrl: string;
@@ -7,6 +8,22 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ whatsappUrl, onBookClick }: HeroSectionProps) => {
+  const [count, setCount] = useState(0);
+  const target = 127;
+  const ref = useRef<number>();
+
+  useEffect(() => {
+    const duration = 2000;
+    const start = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) ref.current = requestAnimationFrame(step);
+    };
+    ref.current = requestAnimationFrame(step);
+    return () => { if (ref.current) cancelAnimationFrame(ref.current); };
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
@@ -35,9 +52,10 @@ const HeroSection = ({ whatsappUrl, onBookClick }: HeroSectionProps) => {
             <MessageCircle className="w-5 h-5" />
             Book Instantly on WhatsApp
           </a>
-          <p className="text-primary-foreground/60 text-sm mt-3">
-            Most patients prefer WhatsApp over calling
-          </p>
+          <div className="mt-6 inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 border border-primary-foreground/20">
+            <span className="text-2xl font-bold text-accent">{count}+</span>
+            <span className="text-primary-foreground/80 text-sm">patients booked this month</span>
+          </div>
         </div>
       </div>
     </section>
